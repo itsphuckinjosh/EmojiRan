@@ -40,7 +40,7 @@ function draw() {
   var vs = 80
   
   //Interface Alignment
-  rect(x-8, y+vs-4, 60, 60)
+  //rect(x-8, y+vs-4, 60, 60)
   
   if(value == 0){
   
