@@ -34,8 +34,8 @@ function draw() {
   
   
   //Emoji Alignment
-  var x = width/2+8
-  var y = height/2+42
+  var x = windowWidth/2+8
+  var y = windowHeight/2+42
   var hs = 80
   var vs = 80
   
