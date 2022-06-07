@@ -5,7 +5,7 @@ let value = 0
 
 function setup() {
 
-  createCanvas(windowWidth, windowHeight); // sets canvas width and height to window widht and height
+  createCanvas(windowWidth, windowHeight); // sets canvas width and height to the window's width and height
   
 }
 
@@ -33,11 +33,11 @@ function draw() {
 // SCALING //
   
   if(width>height){ // desktop scaling
-    var mult = 1
+    var mult = .5
   }else if(height>width){ // mobile scaling
     var mult = 3
   }else{ // default
-    var mult=1
+    var mult = .5
   }
   
 // EMOJI FONT SETTINGS //
@@ -119,7 +119,7 @@ function draw() {
 // COPYRIGHT SCALING //
   
   if(width>height){ // font styling for desktop
-    textSize(16);
+    textSize(10);
     textFont(myFont);
     text("© D Josh Cook", x, y+vs*2.25)
   }else if(height>width){ // font styling for mobile
@@ -127,7 +127,7 @@ function draw() {
     textFont(myFont);
     text("© D Josh Cook", x, y+vs*2.25)
   }else{ // defaut to desktop
-    textSize(16);
+    textSize(10);
     textFont(myFont);
     text("© D Josh Cook", x, y+vs*2.25)
   }
