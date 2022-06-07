@@ -45,8 +45,7 @@ function draw() {
   textSize(ts);
   textFont("Arial");
   
-  
-  //Emoji Alignment
+//Emoji Alignment
   var x = width/2-5;
   var y = height/2-30;
   var hs = ts + ts/3;
@@ -61,15 +60,7 @@ function draw() {
   var xd2 = x;
   var xd3 = x+hs;
   
-  //Interface Alignment
-  // rect(x, y-1.5*vs, 60, 60);
-  // rect(x, y-.5*vs, 60, 60);
-  // rect(x, y+.5*vs, 60, 60);
-  // rect(x, y+1.5*vs, 60, 60);
-  
-  if(value == 0){
-  
-    //Random Emojis
+ if(value == 0){ //Rolling Emojis
     
     text(random(animals), xd1, vd1);
     text(random(emotions), xd2, vd1);
@@ -86,7 +77,7 @@ function draw() {
     
     text("⏸️", x, vd4)
     
-   } else {
+   } else { //Random Emoji Selection
     
     var myNums = [1,2,3,4,5,6,7,8,9];
     var myArray = [];
@@ -94,8 +85,6 @@ function draw() {
     for(i=0; i<5; i++){
       append(myArray, random(myNums));
     }
-    
-    // print(myArray)
 
     if (myArray.includes(1)){text(random(animals), xd1, vd1);}
     if (myArray.includes(2)){text(random(emotions), xd2, vd1);}
