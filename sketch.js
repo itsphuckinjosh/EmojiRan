@@ -99,14 +99,30 @@ function mouseClicked() {
   var hs = 80
   var vs = 80
   
-  if (value == 0 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+  if (value == 0){
     value = 1;
     noLoop();
-  } else if (value == 1 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+  } else if (value == 1){
     value = 0;
     loop();
   }
 }
+
+// function mouseClicked() {
+  
+//   var x = width/2+8
+//   var y = height/2+42
+//   var hs = 80
+//   var vs = 80
+  
+//   if (value == 0 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+//     value = 1;
+//     noLoop();
+//   } else if (value == 1 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+//     value = 0;
+//     loop();
+//   }
+// }
 
 // function mousePressed() {
 // var fs = fullscreen();
