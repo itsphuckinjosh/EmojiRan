@@ -5,7 +5,7 @@ let acitivites, animals, colors, emotions, food, gestures, items, place, nature,
 let value = 0
 
 function setup() {
-  createCanvas(300, 350);
+  createCanvas(windowWidth, windowHeight);
   
 }
 
