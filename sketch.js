@@ -5,7 +5,7 @@ let value = 0
 
 function setup() {
 
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight); // sets canvas width and height to window widht and height
   
 }
 
