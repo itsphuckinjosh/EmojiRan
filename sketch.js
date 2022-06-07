@@ -30,9 +30,9 @@ function preload() {
 function draw() {
   background(255);
   
-  if(windowWidth>windowHeight){
+  if(width>height){
     var mult = 1
-  }else if(windowHeight>windowWidth){
+  }else if(height>width){
     var mult = 3
   }else{
     var mult=1
@@ -113,9 +113,18 @@ function draw() {
      
    }
   
-  textSize(24);
-  textFont(myFont);
-  text("© D Josh Cook", x, y+vs*2.25)
+  if(width>height){
+    textSize(16);
+    textFont(myFont);
+    text("© D Josh Cook", x, y+vs*2.25)
+  }else if(height>width){
+    textSize(24);
+    textFont(myFont);
+    text("© D Josh Cook", x, y+vs*2.25)
+  }else{
+    var mult=1
+  }
+  
   
 }
 
@@ -135,29 +144,6 @@ function mouseClicked() {
   }
 }
 
-// function mouseClicked() {
-  
-//   var x = width/2+8
-//   var y = height/2+42
-//   var hs = 80
-//   var vs = 80
-  
-//   if (value == 0 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
-//     value = 1;
-//     noLoop();
-//   } else if (value == 1 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
-//     value = 0;
-//     loop();
-//   }
-// }
-
-// function mousePressed() {
-// var fs = fullscreen();
-// if (!fs) {
-// fullscreen(true);
-// }
-// }
-
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
