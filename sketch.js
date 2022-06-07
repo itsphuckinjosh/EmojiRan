@@ -23,22 +23,32 @@ function preload() {
   nature = loadStrings('nature.txt');
   food = loadStrings('food.txt');
   
+  myFont = loadFont('IBMPlexMono-Light.otf');
+  
 }
 
 function draw() {
   background(255);
   
-  var mult = 3
+  if(windowWidth>windowHeight){
+    var mult = 1
+  }else if(windowHeight>windowWidth){
+    var mult = 3
+  }else{
+    var mult=1
+  }
+  
   
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
   var ts = 60 * mult
   textSize(ts);
+  textFont("Arial");
   
   
   //Emoji Alignment
-  var x = width/2+10;
-  var y = height/2;
+  var x = width/2-5;
+  var y = height/2-30;
   var hs = ts + ts/3;
   var vs = ts + ts/3;
   
@@ -103,6 +113,10 @@ function draw() {
      
    }
   
+  textSize(24);
+  textFont(myFont);
+  text("© D Josh Cook", x, y+vs*2.25)
+  
 }
 
 function mouseClicked() {
@@ -120,3 +134,30 @@ function mouseClicked() {
     loop();
   }
 }
+
+// function mouseClicked() {
+  
+//   var x = width/2+8
+//   var y = height/2+42
+//   var hs = 80
+//   var vs = 80
+  
+//   if (value == 0 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+//     value = 1;
+//     noLoop();
+//   } else if (value == 1 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
+//     value = 0;
+//     loop();
+//   }
+// }
+
+// function mousePressed() {
+// var fs = fullscreen();
+// if (!fs) {
+// fullscreen(true);
+// }
+// }
+
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
