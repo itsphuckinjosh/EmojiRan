@@ -28,40 +28,53 @@ function preload() {
 function draw() {
   background(255);
   
+  var mult = 3
+  
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  textSize(60);
+  var ts = 60 * mult
+  textSize(ts);
   
   
   //Emoji Alignment
-  var x = windowWidth/2+8
-  var y = windowHeight/2+42
-  var hs = 80
-  var vs = 80
+  var x = width/2+10;
+  var y = height/2;
+  var hs = ts + ts/3;
+  var vs = ts + ts/3;
+  
+  var vd1 = y-1.5*vs;
+  var vd2 = y-.5*vs;
+  var vd3 = y+.5*vs;
+  var vd4 = y+1.5*vs;
+  
+  var xd1 = x-hs;
+  var xd2 = x;
+  var xd3 = x+hs;
   
   //Interface Alignment
-  //rect(x-8, y+vs-4, 60, 60)
+  // rect(x, y-1.5*vs, 60, 60);
+  // rect(x, y-.5*vs, 60, 60);
+  // rect(x, y+.5*vs, 60, 60);
+  // rect(x, y+1.5*vs, 60, 60);
   
   if(value == 0){
   
     //Random Emojis
     
-    text(random(animals), x-hs, y-2*vs, 80, 80);
-    text(random(emotions), x, y-2*hs, 80, 80);
-    text(random(activities), x+hs, y-2*vs, 80, 80);
-    
+    text(random(animals), xd1, vd1);
+    text(random(emotions), xd2, vd1);
+    text(random(activities), xd3, vd1);
 
-    text(random(place), x-hs, y-vs, 80, 80);
-    text(random(colors), x, y-vs, 80, 80);
-    text(random(transportation), x+hs, y-vs, 80, 80);
+    text(random(place), xd1, vd2);
+    text(random(colors), xd2, vd2);
+    text(random(transportation), xd3, vd2);
  
-
-    text(random(items), x-hs, y, 80, 80);
-    text(random(nature), x, y, 80, 80);
-    text(random(food), x+hs, y, 80, 80);
+    text(random(items), xd1, vd3);
+    text(random(nature), xd2, vd3);
+    text(random(food), xd3, vd3);
   
     
-    text("⏸️", x-8, y+1*vs)
+    text("⏸️", x, vd4)
     
    } else {
     
@@ -74,19 +87,19 @@ function draw() {
     
     // print(myArray)
 
-    if (myArray.includes(1)){text(random(animals), x-hs, y-2*vs, 80, 80);}
-    if (myArray.includes(2)){text(random(emotions), x, y-2*hs, 80, 80);}
-    if (myArray.includes(3)){text(random(activities), x+hs, y-2*vs, 80, 80);}
-    
-    if (myArray.includes(4)){text(random(place), x-hs, y-vs, 80, 80);}
-    if (myArray.includes(5)){text(random(colors), x, y-vs, 80, 80);}
-    if (myArray.includes(6)){text(random(transportation), x+hs, y-vs, 80, 80);}
+    if (myArray.includes(1)){text(random(animals), xd1, vd1);}
+    if (myArray.includes(2)){text(random(emotions), xd2, vd1);}
+    if (myArray.includes(3)){text(random(activities), xd3, vd1);}
+
+    if (myArray.includes(4)){text(random(place), xd1, vd2);}
+    if (myArray.includes(5)){text(random(colors), xd2, vd2);}
+    if (myArray.includes(6)){text(random(transportation), xd3, vd2);}
  
-    if (myArray.includes(7)){text(random(items), x-hs, y, 80, 80);}
-    if (myArray.includes(8)){text(random(nature), x, y, 80, 80);}
-    if (myArray.includes(9)){text(random(food), x+hs, y, 80, 80);}
+    if (myArray.includes(7)){text(random(items), xd1, vd3);}
+    if (myArray.includes(8)){text(random(nature), xd2, vd3);}
+    if (myArray.includes(9)){text(random(food), xd3, vd3);}
     
-    text("▶️", x-8, y+1*vs)
+    text("▶️", x, vd4)
      
    }
   
@@ -107,30 +120,3 @@ function mouseClicked() {
     loop();
   }
 }
-
-// function mouseClicked() {
-  
-//   var x = width/2+8
-//   var y = height/2+42
-//   var hs = 80
-//   var vs = 80
-  
-//   if (value == 0 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
-//     value = 1;
-//     noLoop();
-//   } else if (value == 1 && mouseX >= x-8-40 && mouseX <= x-8+40 && mouseY >= y+80-4-30 && mouseY <= y+80-4+30){
-//     value = 0;
-//     loop();
-//   }
-// }
-
-// function mousePressed() {
-// var fs = fullscreen();
-// if (!fs) {
-// fullscreen(true);
-// }
-// }
-
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
